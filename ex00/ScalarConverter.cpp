@@ -6,7 +6,7 @@
 /*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/25 10:09:50 by jocalder          #+#    #+#             */
-/*   Updated: 2026/03/25 12:19:28 by jocalder         ###   ########.fr       */
+/*   Updated: 2026/03/26 09:00:01 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -193,7 +193,9 @@ static void		printFloat(double value)
 		return;
 	}
 	std::cout << f;
-	std::cout << "f" << std::endl;
+    if (f == static_cast<int>(f))
+        std::cout << ".0";
+    std::cout << "f" << std::endl;
 }
 static void		printDouble(double value)
 {
@@ -212,7 +214,9 @@ static void		printDouble(double value)
 		return;
 	}
 	std::cout << value;
-	std::cout << std::endl;
+    if (value == static_cast<int>(value))
+        std::cout << ".0";
+    std::cout << std::endl;
 }
 
 void	ScalarConverter::convert(std::string &literal)
